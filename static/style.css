@@ -1,0 +1,130 @@
+/* General page styling with carbon-fiber texture + Punisher skull watermark */
+body {
+    font-family: 'Impact', 'Bebas Neue', Arial, sans-serif;
+    background-color: #0d0d0d;
+    background-image: radial-gradient(#111 1px, transparent 1px),
+                      radial-gradient(#111 1px, transparent 1px),
+                      url("../static/punisher_skull.png");
+    background-size: 20px 20px, 20px 20px, 300px;
+    background-position: 0 0, 10px 10px, center center;
+    background-repeat: repeat, repeat, no-repeat;
+    background-attachment: fixed;
+    color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Form container */
+form {
+    background: #1a1a1a;
+    padding: 20px;
+    margin: 30px auto;
+    width: 500px;
+    border: 2px solid #f5f5f5;
+    border-radius: 0; /* sharp edges */
+    box-shadow: 0 0 15px rgba(255,0,0,0.4); /* red glow */
+}
+
+/* Section headers */
+.form-section h3 {
+    color: #ff0000;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+/* Input rows (side-by-side layout) */
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.input-row label {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+.input-row input {
+    width: 100px;
+    background-color: #0d0d0d;
+    border: 2px solid #444;
+    color: #f5f5f5;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Labels for single inputs */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: #f5f5f5;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #0d0d0d;
+    border: 2px solid #444;
+    color: #f5f5f5;
+    font-size: 14px;
+}
+
+/* Inputs focus effect */
+input:focus {
+    border-color: #ff0000;
+    outline: none;
+    box-shadow: 0 0 8px #ff0000;
+}
+
+/* Buttons */
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    border: 2px solid #ff0000;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff0000;
+    color: #0d0d0d;
+    transition: 0.3s;
+}
+
+/* Error messages */
+p[style*="color:red"] {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff3333 !important;
+}
+
+/* Plot image */
+img {
+    margin-top: 20px;
+    max-width: 90%;
+    border: 4px solid #f5f5f5;
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+}
+
+/* Signature footer */
+footer {
+    margin-top: 40px;
+    padding: 15px;
+    color: #ff0000;
+    font-size: 12px;
+    border-top: 2px solid #444;
+    text-transform: uppercase;
+}

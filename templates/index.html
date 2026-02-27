@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function Plotter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>FOUNDEAD PLOTTER☠️</h1>
+    <form method="POST">
+        
+        <!-- Function input -->
+        <div class="form-section">
+            <h3>Functions</h3>
+            <input type="text" name="function" placeholder="e.g. sin(x), cos(x)" required>
+        </div>
+
+        <!-- Axis ranges -->
+        <div class="form-section">
+            <h3>Axis Ranges</h3>
+            <div class="input-row">
+                <label>X-min:</label>
+                <input type="number" name="x_min" value="-10">
+                <label>X-max:</label>
+                <input type="number" name="x_max" value="10">
+            </div>
+            <div class="input-row">
+                <label>Y-min:</label>
+                <input type="number" name="y_min" value="-10">
+                <label>Y-max:</label>
+                <input type="number" name="y_max" value="10">
+            </div>
+        </div>
+
+        <!-- Interval spacing -->
+        <div class="form-section">
+            <h3>Intervals</h3>
+            <div class="input-row">
+                <label>X-interval:</label>
+                <input type="number" step="0.1" name="x_interval" placeholder="e.g. 1">
+                <label>Y-interval:</label>
+                <input type="number" step="0.1" name="y_interval" placeholder="e.g. 2">
+            </div>
+        </div>
+
+        <!-- Labels -->
+        <div class="form-section">
+            <h3>Labels</h3>
+            <label>Graph Title:</label>
+            <input type="text" name="graph_title" placeholder="My Graph">
+            
+            <label>X-axis Label:</label>
+            <input type="text" name="x_label" placeholder="x">
+            
+            <label>Y-axis Label:</label>
+            <input type="text" name="y_label" placeholder="f(x)">
+            
+            <label>Graph Labels:</label>
+            <input type="text" name="labels" placeholder="Curve A, Curve B">
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-section">
+            <button type="submit">Plot</button>
+            <button type="submit" name="clear">Clear Plot</button>
+        </div>
+    </form>
+
+    {% if error_message %}
+        <p style="color:red;">{{ error_message }}</p>
+    {% endif %}
+
+    {% if plot_url %}
+        <h2>Result</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Function plot"><br><br>
+        <a href="/download">
+            <button type="button">Download Plot</button>
+        </a>
+    {% endif %}
+
+    <!-- Signature footer -->
+    <footer>
+        <p>Created by Athenkosi Ngoko © 2026</p>
+        <p>The Punisher Inspired | Flask Powered</p>
+    </footer>
+</body>
+</html>
